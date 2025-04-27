@@ -35,8 +35,5 @@ interface MilkBuddyApi {
     suspend fun getVendorOrders(@Path("vendorId") vendorId: String): Response<List<Order>>
     
     @PUT("orders/{orderId}/status")
-    suspend fun updateOrderStatus(
-        @Path("orderId") orderId: String,
-        @Body status: Map<String, String>
-    ): Response<Order>
+    suspend fun updateOrderStatus(@Path("orderId") orderId: String, @Body status: Map<String, String>): Response<Order>
 } 
